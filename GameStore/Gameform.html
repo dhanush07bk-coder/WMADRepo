@@ -1,0 +1,419 @@
+```html
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>GameZone - Contact Us</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<script type="text/javascript">
+
+    function submitForm() {
+
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var password = document.getElementById("password").value;
+        var game = document.getElementById("favorite-game").value;
+        var subject = document.getElementById("subject").value;
+
+        if (name == "") {
+            document.getElementById("result").innerHTML =
+                "Please enter your name.";
+            return false;
+        }
+
+        if (phone != "" && phone.length != 10) {
+            document.getElementById("result").innerHTML =
+                "Please enter a valid 10 digit phone number.";
+            return false;
+        }
+
+        if (password != "" && password.length < 6) {
+            document.getElementById("result").innerHTML =
+                "Password must contain at least 6 characters.";
+            return false;
+        }
+
+        if (game == "") {
+            document.getElementById("result").innerHTML =
+                "Please select your favorite game.";
+            return false;
+        }
+
+        document.getElementById("result").innerHTML =
+            "Thank you " + name +
+            "! Your message about " + subject +
+            " has been received. Your favorite game is " + game + ".";
+
+        return false;
+    }
+
+</script>
+
+
+<body>
+
+
+<!-- Header -->
+
+<header class="navbar">
+
+    <h1>🎮 GameZone</h1>
+
+    <nav>
+
+        <a href="GameStore.html">Home</a>
+
+        <a href="GameStore.html#games">Games</a>
+
+        <a href="GameStore.html#store">Store</a>
+
+        <a href="Gameform.html">Contact Us</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- Main Content -->
+
+<main class="container">
+
+    <section class="contact">
+
+        <h2>Contact GameZone</h2>
+
+        <p>
+            Have a question about a game, an order, or our latest offers?
+            Fill out the form below and our team will get back to you.
+        </p>
+
+
+        <!-- Contact Form -->
+
+        <form onsubmit="return submitForm();">
+
+
+            <!-- Personal Information -->
+
+            <fieldset>
+
+                <legend>Personal Information</legend>
+
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    maxlength="20"
+                    pattern="[A-Za-z ]{1,20}"
+                    title="Please enter a valid name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter your 10 digit phone number"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10 digit phone number"
+>
+
+            </fieldset>
+
+
+
+            <!-- Game Preferences -->
+
+            <fieldset>
+
+                <legend>Game Preferences</legend>
+
+
+                <label for="favorite-game">
+                    Favorite Game
+                </label>
+
+                <select id="favorite-game" required>
+
+                    <option value="">
+                        -- Select a Game --
+                    </option>
+
+                    <option>GTA V</option>
+
+                    <option>RDR 2</option>
+
+                    <option>FIFA 26</option>
+
+                    <option>Minecraft</option>
+
+                    <option>Valorant</option>
+
+                    <option>Elden Ring</option>
+
+                </select>
+
+
+                <p>
+                    Preferred Gaming Platform:
+                </p>
+
+
+                <input
+                    type="radio"
+                    id="pc"
+                    name="platform"
+                    value="PC"
+                >
+
+                <label for="pc">
+                    PC
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="playstation"
+                    name="platform"
+                    value="PlayStation"
+                >
+
+                <label for="playstation">
+                    PlayStation
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="xbox"
+                    name="platform"
+                    value="Xbox"
+                >
+
+                <label for="xbox">
+                    Xbox
+                </label>
+
+
+                <p>
+                    Favorite Game Genres:
+                </p>
+
+
+                <input
+                    type="checkbox"
+                    id="action"
+                >
+
+                <label for="action">
+                    Action
+                </label>
+
+
+                <input
+                    type="checkbox"
+                    id="rpg"
+                >
+
+                <label for="rpg">
+                    RPG
+                </label>
+
+
+                <input
+                    type="checkbox"
+                    id="sports"
+                >
+
+                <label for="sports">
+                    Sports
+                </label>
+
+
+                <input
+                    type="checkbox"
+                    id="racing"
+                >
+
+                <label for="racing">
+                    Racing
+                </label>
+
+            </fieldset>
+
+
+
+            <!-- Order Information -->
+
+            <fieldset>
+
+                <legend>Order Information</legend>
+
+
+                <label for="order">
+                    Order Number
+                </label>
+
+                <input
+                    type="text"
+                    id="order"
+                    placeholder="Enter your order number"
+                    maxlength="20"
+                >
+
+
+                <label for="date">
+                    Preferred Contact Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                >
+
+            </fieldset>
+
+
+
+            <!-- Message -->
+
+            <fieldset>
+
+                <legend>Your Message</legend>
+
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter the subject"
+                    maxlength="50"
+                    required
+                >
+
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    maxlength="500"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+            </fieldset>
+
+
+
+            <!-- Attachment -->
+
+            <fieldset>
+
+                <legend>Attachment</legend>
+
+
+                <label for="screenshot">
+                    Upload a Screenshot
+                </label>
+
+                <input
+                    type="file"
+                    id="screenshot"
+                    accept="image/*"
+                >
+
+            </fieldset>
+
+
+
+            <!-- Terms -->
+
+            <input
+                type="checkbox"
+                id="terms"
+                required
+            >
+
+            <label for="terms">
+                I agree to the terms and conditions.
+            </label>
+
+
+            <br>
+            <br>
+
+
+            <!-- Buttons -->
+
+            <button type="submit">
+                Send Message
+            </button>
+
+
+            <button type="reset">
+                Clear Form
+            </button>
+
+
+        </form>
+
+
+        <!-- JavaScript Result -->
+
+        <p id="result"></p>
+
+    </section>
+
+</main>
+
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        &copy; 2026 GameZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

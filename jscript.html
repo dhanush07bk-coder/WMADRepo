@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>my first javascript</title>
+    <style type="text/css">
+        h1.one{
+            color: red;
+        
+        }
+        h2.two{
+            color: green;
+        
+        }
+    </style>
+</head>
+<body>
+    <h1 class='one'>sample program of Javascript</h1>
+    <script type="text/javascript">
+    function eg(){
+        var b=document.getElementById("txtNumber").value;
+    }
+    <form>
+        <label for="number" >Enter a number:</label>
+        <input type="text" id="txtNumber">
+        <input type="submit"/>
+    </form>
+        var a=prompt("Enter value of a:");
+        if(a%2==0){
+            document.write("<h2 class='two'>" + a+" is even number");
+        }
+        else{
+            document.write("<h2 class='two'>" + a+" is odd number");
+        }
+    </script>
+</body>
+</html>

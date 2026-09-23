@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MyMoviesWeb - Movie Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+```
+<h1>MyMoviesWeb</h1>
+
+<p>
+    Share your opinion about your favourite directors and movies.
+</p>
+
+<hr>
+
+<h2>Movie Feedback Form</h2>
+
+<form>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name"
+           placeholder="Enter your name" required>
+
+    <br><br>
+
+
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"
+           placeholder="Enter your email" required>
+
+    <br><br>
+
+
+
+    <label for="director">Choose a Director:</label>
+
+    <select id="director" name="director">
+        <option value="">-- Select Director --</option>
+        <option value="nolan">Christopher Nolan</option>
+        <option value="cameron">James Cameron</option>
+        <option value="hirani">Rajkumar Hirani</option>
+        <option value="rajamouli">S. S. Rajamouli</option>
+    </select>
+
+    <br><br>
+
+
+
+    <label for="movie">Choose a Movie:</label>
+
+    <select id="movie" name="movie">
+        <option value="">-- Select Movie --</option>
+        <option value="interstellar">Interstellar</option>
+        <option value="inception">Inception</option>
+        <option value="avatar">Avatar</option>
+        <option value="titanic">Titanic</option>
+        <option value="3idiots">3 Idiots</option>
+        <option value="baahubali2">Baahubali 2</option>
+    </select>
+
+    <br><br>
+
+
+
+    <label for="rating">Rate the Movie:</label>
+
+    <select id="rating" name="rating">
+        <option value="">-- Rating --</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Below Average</option>
+        <option value="3">3 - Average</option>
+        <option value="4">4 - Good</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+
+    <br><br>
+
+
+
+    <p>Would you recommend this movie?</p>
+
+    <input type="radio" id="yes" name="recommend" value="yes">
+    <label for="yes">Yes</label>
+
+    <input type="radio" id="no" name="recommend" value="no">
+    <label for="no">No</label>
+
+    <br><br>
+
+
+
+    <p>What did you like about the movie?</p>
+
+    <input type="checkbox" id="story" name="liked" value="story">
+    <label for="story">Story</label>
+
+    <input type="checkbox" id="acting" name="liked" value="acting">
+    <label for="acting">Acting</label>
+
+    <input type="checkbox" id="direction" name="liked" value="direction">
+    <label for="direction">Direction</label>
+
+    <input type="checkbox" id="visuals" name="liked" value="visuals">
+    <label for="visuals">Visuals</label>
+
+    <br><br>
+
+
+
+    <label for="review">Your Review:</label>
+    <br>
+
+    <textarea id="review" name="review"
+              rows="5" cols="50"
+              placeholder="Write your review here..."></textarea>
+
+    <br><br>
+
+
+
+    <button type="submit">Submit Review</button>
+
+    <button type="reset">Reset</button>
+
+    <button type="button" onclick="alert('Thank you for visiting MyMoviesWeb!')">
+        About MyMoviesWeb
+    </button>
+
+</form>
+
+<section class="booking">
+    <div class="booking-form">
+        <h2>Book a Movie</h2>
+
+        <label>Movie</label>
+        <input type="text">
+
+        <label>Theatre</label>
+        <input type="text">
+
+        <label>Date</label>
+        <input type="date">
+
+        <button>Book Now</button>
+    </div>
+
+    <div class="booking-summary">
+        <h2>Booking Summary</h2>
+        <p>Movie: Avatar</p>
+        <p>Theatre: PVR Cinemas</p>
+        <p>Date: 7 September 2026</p>
+        <p>Total: ₹500</p>
+    </div>
+</section>
+
+<hr>
+
+   <a class="back-button" href="MyMovieWeb.html">
+        ← Back to MyMoviesWeb
+    </a>
+<hr>
+
+<p> 2026 MyMoviesWeb</p>
+```
+
+</body>
+
+</html>

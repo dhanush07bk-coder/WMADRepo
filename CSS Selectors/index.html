@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>CSS Selector Priority</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <p>
+        Universal selectors have the lowest priority among the basic selectors.
+    </p>
+
+    <p class="class-para">
+        Class selectors have higher priority than element selectors.
+    </p>
+
+    <p id="id-para">
+        ID selectors have higher priority than class and element selectors.
+    </p>
+
+    <p class="class-para" id="important-para">
+        When multiple selectors target the same element, the selector with higher specificity takes priority.
+    </p>
+
+    <p style="color: purple;">
+        Inline styles have higher priority than the basic selectors written in the CSS file.
+    </p>
+
+</body>
+
+</html>

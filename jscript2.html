@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>my first javascript</title>
+        <style type="text/css">
+            h1.one{
+                color: red;
+            
+            }
+            h2.two{
+                color: green;
+            
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        function eg(){
+            var name=document.getElementById("txtName").value;
+            var voice=document.getElementById("txtVoice").value;
+            var q=document.getElementById("txtNumber").value;
+            document.getElementById("result").innerHTML="Welcome " + name +" Says " + voice + ", and the number is: " + q;
+        }
+    </script>
+    <body>
+        <h1 class='one'>sample program of Javascript</h1>
+        <form onsubmit="eg(); return false;">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="txtName" maxlength=20 pattern="[A-Za-z]{1,20}" title="Please enter a valid name" required/>
+
+            <label for="voice">Enter your voice:</label>
+            <input type="text" id="txtVoice" maxlength=100 pattern="[A-Za-z\s]{1,100}" title="Please enter a valid voice" required/>
+
+            <label for="number" >Enter a number:</label>
+            <input type="text" id="txtNumber" maxlength=10  pattern="^[0-9]{10}" title="Please enter a valid number"  required/>
+            <input type="submit"/>
+        </form>
+        <p id="result"></p>
+    </body>
+</html>

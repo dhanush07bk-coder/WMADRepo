@@ -1,0 +1,24 @@
+* {
+    color: black;
+}
+
+p {
+    color: blue;
+}
+
+.class-para {
+    color: green;
+    font-size: 40px;
+
+}
+
+#id-para {
+    color: red;
+    font-size: 50px;
+
+}
+
+#important-para {
+    color: orange;
+    font-size: 60px;
+}
