@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+
+  background-color: #0b1f14;
+  color: white;
+}
+
+.navbar h2 {
+  margin: 0;
+  color: #4ade80;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-links a:hover {
+  color: #4ade80;
+}
+
+.login-btn {
+  background-color: #22c55e;
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #16a34a;
+}
