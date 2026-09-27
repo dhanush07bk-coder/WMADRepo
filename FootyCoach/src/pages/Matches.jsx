@@ -2,19 +2,19 @@ import { useState } from "react";
 
 function Matches() {
 
-  // Which section is currently selected
   const [matchType, setMatchType] = useState("live");
 
-  // Ticket form values
   const [name, setName] = useState("");
   const [tickets, setTickets] = useState("1");
   const [match, setMatch] = useState("");
 
-  // Booking message
   const [message, setMessage] = useState("");
 
 
-  // Live matches
+  /* =========================
+     MATCH DATA
+     ========================= */
+
   const liveMatches = [
     {
       home: "Barcelona",
@@ -31,15 +31,6 @@ function Matches() {
   ];
 
 
-  // Match highlights
-  const highlights = [
-    "Barcelona vs Real Madrid",
-    "Arsenal vs Chelsea",
-    "Manchester United vs Liverpool"
-  ];
-
-
-  // Nearby matches
   const nearbyMatches = [
     {
       home: "Bangalore FC",
@@ -56,103 +47,84 @@ function Matches() {
   ];
 
 
-  // School matches
   const schoolMatches = [
     {
-      school1: "Delhi Public School",
-      school2: "National Public School",
+      home: "Delhi Public School",
+      away: "National Public School",
       location: "Bangalore",
       date: "October 5"
     },
     {
-      school1: "Greenwood High",
-      school2: "Bishop Cotton",
+      home: "Greenwood High",
+      away: "Bishop Cotton",
       location: "Bangalore",
       date: "October 12"
     }
   ];
 
 
-  // Ticket booking function
+  /* =========================
+     TICKET BOOKING
+     ========================= */
+
   function bookTicket(event) {
 
-    // Prevent page refresh
     event.preventDefault();
 
-
-    // Check if fields are empty
     if (name === "" || match === "") {
 
-      setMessage("Please fill all the required fields.");
+      setMessage("⚠️ Please fill all the required fields.");
 
       return;
     }
 
-
-    // Show booking message
     setMessage(
-      "Ticket booked successfully for " +
-      name +
-      "! 🎟️"
+      "✅ Ticket booked successfully for " + name + "!"
     );
 
-
-    // Clear form
     setName("");
     setTickets("1");
     setMatch("");
+
   }
 
 
   return (
+
     <div className="page">
 
       <h1>🏟️ Matches</h1>
 
       <p>
-        Follow matches, watch highlights and
-        find football games near you.
+        Follow live matches, highlights and
+        football games near you.
       </p>
 
 
-      {/* MATCH NAVIGATION */}
+      {/* =========================
+          MATCH NAVIGATION
+          ========================= */}
 
       <div className="match-buttons">
 
-        <button
-          onClick={() => setMatchType("live")}
-        >
-          🔴 Live Matches
+        <button onClick={() => setMatchType("live")}>
+          🔴 Live & Highlights
         </button>
 
-        <button
-          onClick={() => setMatchType("highlights")}
-        >
-          🎬 Highlights
+        <button onClick={() => setMatchType("nearby")}>
+          📍 Nearby & School
         </button>
 
-        <button
-          onClick={() => setMatchType("nearby")}
-        >
-          📍 Nearby
-        </button>
-
-        <button
-          onClick={() => setMatchType("school")}
-        >
-          🏫 School
-        </button>
-
-        <button
-          onClick={() => setMatchType("tickets")}
-        >
-          🎟️ Tickets
+        <button onClick={() => setMatchType("tickets")}>
+          🎟️ Book Tickets
         </button>
 
       </div>
 
 
-      {/* LIVE MATCHES */}
+      {/* =========================
+          LIVE & HIGHLIGHTS
+          ========================= */}
 
       {matchType === "live" && (
 
@@ -178,49 +150,12 @@ function Matches() {
                   Match Time: {game.time}
                 </p>
 
-                <button>
-                  View Match
-                </button>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      )}
-
-
-      {/* HIGHLIGHTS */}
-
-      {matchType === "highlights" && (
-
-        <div>
-
-          <h2>🎬 Match Highlights</h2>
-
-          <div className="card-container">
-
-            {highlights.map((game, index) => (
-
-              <div className="card" key={index}>
-
-                <h2>
-                  {game}
-                </h2>
-
-                <p>
-                  Watch the best moments from the match.
-                </p>
-
                 <button
                   onClick={() =>
-                    alert("Highlight video coming soon!")
+                    alert("Match highlights coming soon! 🎬")
                   }
                 >
-                  ▶ Watch Highlight
+                  🎬 Highlights
                 </button>
 
               </div>
@@ -234,7 +169,9 @@ function Matches() {
       )}
 
 
-      {/* NEARBY MATCHES */}
+      {/* =========================
+          NEARBY & SCHOOL
+          ========================= */}
 
       {matchType === "nearby" && (
 
@@ -270,16 +207,6 @@ function Matches() {
 
           </div>
 
-        </div>
-
-      )}
-
-
-      {/* SCHOOL MATCHES */}
-
-      {matchType === "school" && (
-
-        <div>
 
           <h2>🏫 School Matches</h2>
 
@@ -290,16 +217,12 @@ function Matches() {
               <div className="card" key={index}>
 
                 <h2>
-                  {game.school1}
+                  {game.home}
                 </h2>
 
-                <h3>
-                  vs
-                </h3>
-
-                <h2>
-                  {game.school2}
-                </h2>
+                <p>
+                  vs {game.away}
+                </p>
 
                 <p>
                   📍 {game.location}
@@ -324,7 +247,9 @@ function Matches() {
       )}
 
 
-      {/* TICKET BOOKING */}
+      {/* =========================
+          TICKET BOOKING
+          ========================= */}
 
       {matchType === "tickets" && (
 
@@ -333,8 +258,6 @@ function Matches() {
           <h2>🎟️ Book Match Tickets</h2>
 
           <form onSubmit={bookTicket}>
-
-            {/* Name */}
 
             <label>
               Your Name
@@ -349,8 +272,6 @@ function Matches() {
               }
             />
 
-
-            {/* Match */}
 
             <label>
               Select Match
@@ -382,8 +303,6 @@ function Matches() {
             </select>
 
 
-            {/* Number of tickets */}
-
             <label>
               Number of Tickets
             </label>
@@ -406,8 +325,6 @@ function Matches() {
           </form>
 
 
-          {/* Booking Message */}
-
           {message !== "" && (
 
             <p className="form-message">
@@ -421,7 +338,9 @@ function Matches() {
       )}
 
     </div>
+
   );
+
 }
 
 export default Matches;

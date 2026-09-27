@@ -1,3 +1,7 @@
+/* =========================
+   BASIC PAGE SETTINGS
+   ========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +12,61 @@ body {
   font-family: Arial, sans-serif;
 
   background-color: #f4f7f5;
+
+  color: #17251c;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+
+input,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+  font-family: inherit;
+}
+
+/* =========================
+   FOOTBALL BACKGROUND
+   ========================= */
+
+body {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  background-image:
+    linear-gradient(
+      rgba(244, 247, 245, 0.55),
+      rgba(244, 247, 245, 0.55)
+    ),
+    url("https://img.magnific.com/premium-photo/realistic-football-ground-with-plain-background_1278587-12893.jpg?semt=ais_hybrid&w=740&q=80");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+
+  background-repeat: no-repeat;
 
   color: #17251c;
 }
